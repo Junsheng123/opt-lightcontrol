@@ -1,0 +1,7 @@
+loguru==0.4.1
+numpy==1.16.1
+openpyxl==3.0.4
+PyInstaller==3.6
+pyserial==3.4
+websockets==8.0.2
+opencv-python

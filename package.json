@@ -1,0 +1,106 @@
+{
+  "name": "opt-lightcontrol",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "cross-env": "^6.0.3",
+    "electron-is-dev": "^1.1.0",
+    "electron-progressbar": "^1.2.0",
+    "electron-root-path": "^1.0.16",
+    "find-process": "^1.4.3",
+    "react": "^16.13.1",
+    "react-canvas-draw": "^1.1.1",
+    "react-dom": "^16.13.1",
+    "react-input-slider": "^6.0.0",
+    "react-scripts": "3.4.3",
+    "taskkill": "^3.1.0",
+    "typeface-roboto": "0.0.75"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "electron": "^7.2.4",
+    "electron-builder": "^22.6.0",
+    "wait-on": "^3.3.0"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "build-react": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "build-electron": "electron-builder",
+    "build": "npm run build-react && npm run build-electron",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "build": {
+    "productName": "OPTControl",
+    "appId": "app.optcontrol.v000900",
+    "copyright": "shawn",
+    "buildVersion": "0.9.0",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "files": [
+        "**/*",
+        "!**/build/xpyserver_dist/*",
+        "!**/build/builds/*",
+        "!**/.vscode/*",
+        "!**/build/server/*",
+        "!**/build/systemlog/*",
+        "!**/.git/*",
+        "!**/__pycache__/*"
+      ],
+      "extraFiles": [
+        "config.json",
+        {
+          "from": "build/pyserver_dist",
+          "to": "pyserver_dist",
+          "filter": [
+            "**/*"
+          ]
+        }
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OPTController",
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "installerHeaderIcon": "icon.ico"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

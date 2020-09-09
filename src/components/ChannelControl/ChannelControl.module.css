@@ -1,0 +1,29 @@
+.ControlContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.Button {
+    width: 50px;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.GreenBtn {
+    background-color: greenyellow;
+    color: black;
+}
+
+.Slider {
+    margin: 20px 0;
+    height: 400px;
+}
+
+.ControlContainer > input {
+    width: 50px;
+    font-size: 1rem;
+    padding: 5px;
+}

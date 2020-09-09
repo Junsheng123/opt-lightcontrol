@@ -1,0 +1,40 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.ControlPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+}
+.FunctionPanel{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(151, 151, 155);
+  color: black;
+  margin-top: auto;
+}
+
+.VisionPanel {
+  height: 100%;
+  max-width: 1200px;
+}
+
+.LightControlPanel {
+  height: 100%;
+  margin-left: auto;
+}
